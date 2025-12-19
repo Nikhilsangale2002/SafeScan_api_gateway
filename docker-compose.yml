@@ -3,12 +3,9 @@ version: '3.8'
 services:
   gateway:
     build: .
+    container_name: safescan_gateway
     ports:
-      - "80:80"
-    depends_on:
-      - safescan_apis
-      - safescan_webapp
-      - safescan_monitoring
+      - "8083:80"
     networks:
       - safescan-network
     restart: unless-stopped
